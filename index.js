@@ -18,8 +18,9 @@ app.get("/test", function (req, res) {
         else {
             //sote the response into a string
             var result = JSON.stringify(response, null, 2);
-            res.end(response.images.constructor.name + "\n");
-            res.end(response.image[0].classifiers.constructor.name)
+            res.write(response.images.constructor.name + "\n");
+            res.write(response.image[0].classifiers.constructor.name +"\n")
+            res.end(response.image[0].classifiers[0].classes.constructor.name + "\n")
             console.log(JSON.stringify(response, null, 2))
         }
     });
