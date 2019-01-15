@@ -21,7 +21,7 @@ app.get("/test", function (req, res) {
             res.write(response.images.constructor.name + "\n");
             res.write(response.image[0].classifiers.constructor.name +"\n")
             res.end(response.image[0].classifiers[0].classes.constructor.name + "\n")
-            console.log(JSON.stringify(response, null, 2))
+            console.log(result);
         }
     });
 
