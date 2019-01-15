@@ -22,8 +22,8 @@ app.get("/test", function (req, res) {
             //res.write(response.images[0].classifiers.constructor.name +"\n");
             //res.end(response.images[0].classifiers[0].classes.constructor.name + "\n");
             //Get the array of classes (category classification)
-            var class_col = response.images[0].classifier[0].classes;
-            for (i=0; i<class_col_length, i++){
+            var class_col = response.images[0].classifiers[0].classes;
+            for (i=0; i<class_col.length; i++){
                 res.write(class_col[i].class+ "\n");
                 res.write(class_col[i].score+ "\n");
             }
