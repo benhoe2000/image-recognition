@@ -40,5 +40,5 @@ var listener = app.listen(process.env.PORT,process.env.IP,function(){
 //var listener = app.listen(4000, process.env.IP, function () {
     var listener = app.listen(process.env.PORT,process.env.IP,function(){
     console.log("server has started");
-    console.log('Listening on port ' + listener.address().port);
+    console.log('Listening on port ' + listener.address().port)
 })
