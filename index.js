@@ -8,9 +8,6 @@ var visualRecognition = new VisualRecognitionV3({
   iam_apikey: 'ZPcjgHdJMSokQ2f9_SHGtyaqYd5sdmLB6CAU8kRmMPd3'
 });
 
-var images_file = fs.createReadStream('./picture.jpg');
-var classifier_ids = ["food"];
-
 var params = {
   url:"https://www.t-mobile.com/content/dam/t-mobile/en-p/cell-phones/apple/apple-iphone-x/silver/Apple-iPhoneX-Silver-1-3x.jpg"
 };
