@@ -18,9 +18,17 @@ app.get("/test", function (req, res) {
         else {
             //sote the response into a string
             var result = JSON.stringify(response, null, 2);
-            res.write(response.images.constructor.name + "\n");
-            res.write(response.image[0].classifiers.constructor.name +"\n")
-            res.end(response.image[0].classifiers[0].classes.constructor.name + "\n")
+            //res.write(response.images.constructor.name + "\n");
+            //res.write(response.images[0].classifiers.constructor.name +"\n");
+            //res.end(response.images[0].classifiers[0].classes.constructor.name + "\n");
+            //Get the array of classes (category classification)
+            var class_col = response.images[0].classifier[0].classes;
+            for (i=0; i<class_col_length, i++){
+                res.write(class_col[i].class+ "\n");
+                res.write(class_col[i].score+ "\n");
+            }
+            res.end("END")
+
             console.log(result);
         }
     });
