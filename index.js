@@ -4,7 +4,7 @@ var app = express();
 
 app.get("/test",function(req,res){
 var visualRecognition = new VisualRecognitionV3({
-  version: '2019-01-15',
+  version: '2018-03-19',
   iam_apikey: 'ZPcjgHdJMSokQ2f9_SHGtyaqYd5sdmLB6CAU8kRmMPd3'
 });
 
@@ -15,8 +15,12 @@ var params = {
 visualRecognition.classify(params, function(err, response) {
   if (err)
     console.log(err);
-  else
+  else {
+      //sote the response into a string
+      var result=JSOON.stringify(response, null,2)
+      res.end(result)
     console.log(JSON.stringify(response, null, 2))
+  }
 });
 
 })
