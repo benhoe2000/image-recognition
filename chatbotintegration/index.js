@@ -34,7 +34,7 @@ exports.dialogflowFirebaseFulfillment = functions.https.onRequest((request, resp
     agent.handleRequest(intentMap);
 });
 const exapp = express().use(bodyParser.json());
-exapp.post('/fulfillment', app.dialogflowFirebaseFulfillment());
+exapp.post('/fulfillment', app.dialogflowFirebaseFulfillment);
 var listener = exapp.listen(process.env.PORT, process.env.IP, function () {
     console.log("server has started");
     console.log('Listening on port ' + listener.address().port);
